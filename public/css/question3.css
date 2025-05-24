@@ -1,0 +1,148 @@
+/* Base styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f4f4;
+    padding: 30px;
+    max-width: 800px;
+    margin: auto;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fillSampleButton {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+/* Form container */
+form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead th {
+    text-align: left;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-bottom: 2px solid #ccc;
+}
+
+td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.remove {
+    background-color: #e74c3c;
+}
+
+.remove:hover {
+    background-color: #c0392b;
+}
+
+/* Button layout */
+#addRow, [type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Summary box */
+.summary-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e8f4fd;
+    border-left: 5px solid #3498db;
+    border-radius: 8px;
+}
+
+.summary-box ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.summary-box li {
+    margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    thead {
+        display: none;
+    }
+
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+    }
+    td {
+        padding: 8px 10px 8px 50%;
+        position: relative;
+        text-align: left;
+        border: none;
+        box-sizing: border-box;
+    }
+
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        white-space: nowrap;
+    }
+
+        td input,
+    td select,
+    td button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .remove {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
