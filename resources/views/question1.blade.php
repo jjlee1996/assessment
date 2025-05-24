@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <title>Download Tester</title>
+    <title>Question 1</title>
     <link rel="stylesheet" href="{{ asset('css/question1.css') }}">
 </head>
 
 <body>
-    <h1>Download Simulation</h1>
+    <h1>Question 1</h1>
     <div class="container">
         <form id="downloadForm">
             <label for="memberType">Member Type:</label>

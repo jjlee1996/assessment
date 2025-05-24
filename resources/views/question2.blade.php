@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <title>Message Analyzer</title>
+    <title>Question 2</title>
     <link rel="stylesheet" href="{{ asset('css/question1.css') }}">
 </head>
 
 <body>
-    <h1>Message Simulation</h1>
+    <h1>Question 2</h1>
     <div class="container">
         <form id="analyzeForm">
             <label for="send">Mike sends:</label>

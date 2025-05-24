@@ -19,3 +19,5 @@ Route::post('/summary', [Question3Controller::class, 'insertData']);
 Route::view('/question4', 'question4'); 
 Route::get('/simulate', [Question4Controller::class, 'simulate']);
 
+Route::view('/question5', 'question5'); 
+

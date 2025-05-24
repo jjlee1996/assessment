@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <title>Student Test Summary</title>
+    <title>Question 3</title>
     <link rel="stylesheet" href="{{ asset('css/question3.css') }}">
 </head>
 
 <body>
-    <h1>Student Test Summary</h1>
+    <h1>Question 3</h1>
     <div class="fillSampleButton">
         <button type="button" id="fillSample">Fill Sample Data</button>
     </div>

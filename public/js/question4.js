@@ -14,11 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 2000);
     }
 
-    // Live input filter: allow digits only
     function filterInputToDigits(inputElement, tooltipElement) {
         inputElement.addEventListener('input', function (e) {
             const originalValue = this.value;
-            const filteredValue = originalValue.replace(/\D/g, '');
+            const filteredValue = originalValue.replace(/\D/g, ''); // replace anything other than digit
+
+            console.log(`originalValue: ${originalValue}`);
+            console.log(`filteredValue: ${filteredValue}`);
+
 
             if (originalValue !== filteredValue) {
                 showTooltip(tooltipElement);
@@ -30,41 +33,41 @@ document.addEventListener('DOMContentLoaded', function () {
     filterInputToDigits(rarityInput, rarityTooltip);
     filterInputToDigits(vipInput, vipTooltip);
 
-form.addEventListener('submit', async function (e) {
-    e.preventDefault();
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-    const maxRarities = parseInt(rarityInput.value, 10);
-    const maxVips = parseInt(vipInput.value, 10);
+        const maxRarities = parseInt(rarityInput.value, 10);
+        const maxVips = parseInt(vipInput.value, 10);
 
-    let rarities = [];
-    if (!isNaN(maxRarities) && maxRarities > 0) {
-        for (let i = 1; i <= maxRarities; i++) {
-            rarities.push(i);
+        let rarities = [];
+        if (!isNaN(maxRarities) && maxRarities > 0) {
+            for (let i = 1; i <= maxRarities; i++) {
+                rarities.push(i);
+            }
         }
-    }
 
-    let vips = [];
-    if (!isNaN(maxVips) && maxVips > 0) {
-        for (let i = 1; i <= maxVips; i++) {
-            vips.push(`vip${i}`);
+        let vips = [];
+        if (!isNaN(maxVips) && maxVips > 0) {
+            for (let i = 1; i <= maxVips; i++) {
+                vips.push(`vip${i}`);
+            }
         }
-    }
 
-    const params = [
-        ...rarities.map(r => `rarities[]=${encodeURIComponent(r)}`),
-        ...vips.map(v => `vips[]=${encodeURIComponent(v)}`)
-    ].join('&');
+        const params = [
+            ...rarities.map(r => `rarities[]=${encodeURIComponent(r)}`),
+            ...vips.map(v => `vips[]=${encodeURIComponent(v)}`)
+        ].join('&');
 
-    try {
-        const response = await fetch(`/simulate?${params}`);
-        const result = await response.json();
+        try {
+            const response = await fetch(`/simulate?${params}`);
+            const result = await response.json();
 
-        const resultDiv = document.getElementById('results');
-        resultDiv.innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
-    } catch (error) {
-        console.error('Simulation error:', error);
-        alert('An error occurred while simulating.');
-    }
-});
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+        } catch (error) {
+            console.error('Simulation error:', error);
+            alert('An error occurred while simulating.');
+        }
+    });
 
 });

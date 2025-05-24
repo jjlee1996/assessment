@@ -10,7 +10,7 @@ h1{
 }
 
 .container {
-    max-width: 500px;
+    max-width: 1500px;
     margin: auto;
     background: #fff;
     padding: 30px;
@@ -43,4 +43,27 @@ button {
 #result {
     margin-top: 20px;
     font-weight: bold;
+}
+
+ol {
+        font-weight: bold;
+}
+
+p {
+    font-weight: normal;
+}
+
+thead th {
+    text-align: left;
+    background-color: #f1f1f1;
+    border-bottom: 2px solid #ccc;
+}
+
+td {
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+table {
+   margin-bottom: 20px; 
 }
