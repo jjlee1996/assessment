@@ -113,7 +113,7 @@
                         LIMIT 1;
                         </code>
                     </pre>
-
+ 
                     <li type="a">Tell me the number of transactions in each hour of the day.</li>
                     <pre>
                         <code>
