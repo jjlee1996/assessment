@@ -10,7 +10,7 @@ h1{
 }
 
 .container {
-    max-width: 1500px;
+    max-width: 1000px;
     margin: auto;
     background: #fff;
     padding: 30px;
@@ -67,3 +67,4 @@ td {
 table {
    margin-bottom: 20px; 
 }
+
