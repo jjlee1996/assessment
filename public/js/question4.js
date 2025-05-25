@@ -3,9 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const rarityInput = document.getElementById('rarities');
     const vipInput = document.getElementById('vips');
+    const rollInput = document.getElementById('rolls');
+
 
     const rarityTooltip = document.getElementById('rarities-tooltip');
     const vipTooltip = document.getElementById('vips-tooltip');
+    const rollTooltip = document.getElementById('rolls-tooltip');
+
 
     function showTooltip(tooltip) {
         tooltip.style.display = 'inline';
@@ -32,12 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     filterInputToDigits(rarityInput, rarityTooltip);
     filterInputToDigits(vipInput, vipTooltip);
+        filterInputToDigits(rollInput, rollTooltip);
+
 
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         const maxRarities = parseInt(rarityInput.value, 10);
         const maxVips = parseInt(vipInput.value, 10);
+        const roll = rollInput.value;
 
         let rarities = [];
         if (!isNaN(maxRarities) && maxRarities > 0) {
@@ -55,7 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const params = [
             ...rarities.map(r => `rarities[]=${encodeURIComponent(r)}`),
-            ...vips.map(v => `vips[]=${encodeURIComponent(v)}`)
+            ...vips.map(v => `vips[]=${encodeURIComponent(v)}`),
+            `roll=${encodeURIComponent(roll)}`
         ].join('&');
 
         try {

@@ -12,6 +12,7 @@ class Question4Controller extends Controller
     {
         $itemRarity = $request->input('rarities', []);
         $vipRanks = $request->input('vips', []);
+        $roll =  $request->input('roll', []);
 
         $itemRarity = array_map('intval', $itemRarity);
         $vipRanks = array_map('strval', $vipRanks);
@@ -21,7 +22,7 @@ class Question4Controller extends Controller
         foreach ($vipRanks as $vip) {
             $result[$vip] = array_fill_keys($itemRarity, 0);
 
-            for ($i = 0; $i < 100; $i++) {
+            for ($i = 0; $i < $roll; $i++) {
                 $rarity = $this->rollItem($vip, $vipRanks, $itemRarity);
                 $result[$vip][$rarity]++;
             }

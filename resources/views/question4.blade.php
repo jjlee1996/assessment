@@ -20,7 +20,12 @@
             <input type="text" name="vips" id="vips" class="form-control" value="3" required>
             <span id="vips-tooltip" class="input-tooltip" style="display:none; color: red; font-size: 0.9em;">Digits
                 only!</span>
-            
+
+            <label for="vips">Number Rolls (single number):</label>
+            <input type="text" name="rolls" id="rolls" class="form-control" value="100" required>
+            <span id="rolls-tooltip" class="input-tooltip" style="display:none; color: red; font-size: 0.9em;">Digits
+                only!</span>
+
             <button id="simulate-btn">Roll</button>
 
         </form>
